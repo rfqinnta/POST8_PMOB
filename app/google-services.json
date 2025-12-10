@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "89087523864",
+    "firebase_url": "https://post8-a2fe4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "post8-a2fe4",
+    "storage_bucket": "post8-a2fe4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89087523864:android:1eb6e62f540979fac7d76d",
+        "android_client_info": {
+          "package_name": "com.nanta.post8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa5QQIZWesA3BAohbG3eYrXiqXrH_wC8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp">
+
+        <CheckBox
+            android:id="@+id/checkDone"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="4dp"
+            android:buttonTint="#4D47F5" />
+
+        <TextView
+            android:id="@+id/textTitleTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/checkDone"
+            android:layout_marginStart="12dp"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:text="Title" />
+
+        <TextView
+            android:id="@+id/textDescriptionTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/checkDone"
+            android:layout_below="@id/textTitleTask"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp"
+            android:textColor="#7A7A7A"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/textDeadlineTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/checkDone"
+            android:layout_below="@id/textDescriptionTask"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="7dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/bg_deadline"
+            android:textSize="13sp"
+            android:textColor="#4D47F5"
+            android:text="17/12/2025" />
+
+        <ImageView
+            android:id="@+id/buttonDelete"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:tint="#FF3B30"
+            android:src="@drawable/baseline_delete_24" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
