@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
 
@@ -42,7 +43,6 @@ class TaskAdapter(
         holder.checkDone.isChecked = task.done
 
         holder.itemView.alpha = if (task.done) 0.4f else 1f
-        holder.itemView.isEnabled = true
 
         holder.itemView.setOnClickListener {
             if (!task.done) onEdit(task)
@@ -57,8 +57,12 @@ class TaskAdapter(
         }
 
         holder.buttonDelete.setOnClickListener {
+            val context = holder.itemView.context
             task.id?.let { id ->
                 tasksRef.child(id).removeValue()
+                    .addOnSuccessListener {
+                        Toast.makeText(context, "Tugas dihapus", Toast.LENGTH_SHORT).show()
+                    }
             }
         }
     }

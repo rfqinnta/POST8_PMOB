@@ -39,7 +39,6 @@ class EditTaskDialog(
             ).show()
         }
 
-        // Dialog edit
         MaterialAlertDialogBuilder(context)
             .setTitle("Edit Tugas")
             .setView(binding.root)
@@ -47,7 +46,6 @@ class EditTaskDialog(
                 dialog.dismiss()
             }
             .setPositiveButton("Simpan") { _, _ ->
-
                 val title = binding.editTextTitle.text.toString().trim()
                 val desc = binding.editTextDescription.text.toString().trim()
                 val deadline = binding.editTextDeadline.text.toString().trim()
@@ -57,12 +55,7 @@ class EditTaskDialog(
                     return@setPositiveButton
                 }
 
-                // Cek ID
-                val id = task.id
-                if (id.isNullOrEmpty()) {
-                    Toast.makeText(context, "ID task tidak ditemukan", Toast.LENGTH_SHORT).show()
-                    return@setPositiveButton
-                }
+                val id = task.id ?: return@setPositiveButton
 
                 val updated = task.copy(
                     title = title,
@@ -72,7 +65,7 @@ class EditTaskDialog(
 
                 tasksRef.child(id).setValue(updated)
                     .addOnSuccessListener {
-                        Toast.makeText(context, "Tugas berhasil diperbarui", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Tugas diperbarui", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener {
                         Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()

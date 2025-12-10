@@ -19,7 +19,6 @@ class AddTaskDialog(
     fun show() {
         val binding = DialogAddTaskBinding.inflate(LayoutInflater.from(context))
 
-        // DatePicker untuk deadline
         binding.editTextDeadline.setOnClickListener {
             val c = Calendar.getInstance()
             val dialog = DatePickerDialog(
@@ -43,7 +42,7 @@ class AddTaskDialog(
             .setNegativeButton("Batal") { dialog, _ ->
                 dialog.dismiss()
             }
-            .setPositiveButton("Simpan") { dialog, _ ->
+            .setPositiveButton("Simpan") { _, _ ->
                 val title = binding.editTextTitle.text.toString()
                 val desc = binding.editTextDescription.text.toString()
                 val deadline = binding.editTextDeadline.text.toString()
@@ -68,7 +67,7 @@ class AddTaskDialog(
         )
         tasksRef.child(id).setValue(task)
             .addOnSuccessListener {
-                Toast.makeText(context, "Tugas ditambahkan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Tugas dibuat", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
                 Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
